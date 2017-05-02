@@ -219,6 +219,7 @@
     <Content Include="Views\Home\Sell.cshtml" />
     <Content Include="Views\Home\Casino.cshtml" />
     <Content Include="Views\Home\Airport.cshtml" />
+    <Content Include="Views\Home\GameOver.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
