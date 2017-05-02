@@ -1,0 +1,18 @@
+﻿@model ComputerWars.Models.Player
+
+@{
+    ViewBag.Title = "Prices";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="prices">
+    <p>Processors: $@Model.Prices["Processors"]</p>
+    <p>Graphics Cards: $@Model.Prices["Graphics Cards"]</p>
+    <p>Hard Drives: $@Model.Prices["Hard Drives"]</p>
+    <p>RAM Sticks: $@Model.Prices["RAM Sticks"]</p>
+    <p>Flash Drives: $@Model.Prices["Flash Drives"]</p>
+</div>
+
+<div class="return">
+    <p>@Html.ActionLink("Return To Main Menu", "Game", "Home")</p>
+</div>

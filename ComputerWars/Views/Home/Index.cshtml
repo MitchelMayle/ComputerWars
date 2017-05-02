@@ -8,6 +8,15 @@
     <p>When you travel to a different city, one day will pass, and the price rate for each part will change for that day.</p>
 </div>
 
-<div class="begin">
-    @Html.ActionLink("Begin Game", "Game", "Home")
-</div>
+@if (Session["player"] == null)
+{
+    <div class="begin">
+        @Html.ActionLink("Begin Game", "Game", "Home")
+    </div>
+}
+else
+{
+    <div class="begin">
+        @Html.ActionLink("Continue Game", "Game", "Home")
+    </div>
+}

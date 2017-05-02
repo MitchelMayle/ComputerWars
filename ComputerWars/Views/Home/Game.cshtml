@@ -9,3 +9,16 @@
     <p><span style="text-decoration: underline">Current Day:</span> @Model.CurrentDay</p>
     <p><span style="text-decoration: underline">Money Remaining:</span> $@Model.Money</p>
 </div>
+
+<div class="options">
+    <p>@Html.ActionLink("View Inventory", "Inventory", "Home")</p>
+    <p>@Html.ActionLink("View Current Prices", "Prices", "Home")</p>
+    <p>@Html.ActionLink("Buy Parts", "Buy", "Home")</p>
+    <p>@Html.ActionLink("Sell Parts", "Sell", "Home")</p>
+    <p>@Html.ActionLink("Casino", "Casino", "Home")</p>
+    <p>@Html.ActionLink("Airport", "Airport", "Home")</p>
+</div>
+
+<div class="endGame">
+    <p>@Html.ActionLink("END GAME", "GameOver", "Home")</p>
+</div>
