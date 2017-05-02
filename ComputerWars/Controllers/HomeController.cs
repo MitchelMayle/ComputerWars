@@ -101,17 +101,17 @@ namespace ComputerWars.Controllers
         [HttpPost]
         public ActionResult Buy(BuySellViewModel model)
         {
+            Player player = Session["player"] as Player;
+            model.Player = player;
+
             if (!ModelState.IsValid)
             {
                 return View("Buy", model);
             }
 
-            Player player = Session["player"] as Player;
-            model.Player = player;
-
             if (player.Money < (player.Prices[model.PartName] * model.Quantity))
             {
-                ModelState.AddModelError("notEnoughMoney", "You do not have enough money to complete this purchase");
+                ModelState.AddModelError("notEnoughMoney", "You do not have enough money.");
                 return View("Buy", model);
             }
 
