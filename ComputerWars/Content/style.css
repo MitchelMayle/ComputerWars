@@ -1,5 +1,10 @@
-﻿body {
-    font-family: 'Courier New', monospace;
+﻿@font-face {
+    font-family: 'Courier New';
+    src: url('../fonts/courier new.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Courier New';
     padding-top: 50px;
     padding-bottom: 20px;
     background-color: black;
