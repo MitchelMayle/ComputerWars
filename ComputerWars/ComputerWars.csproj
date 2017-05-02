@@ -155,7 +155,7 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DAL\IPartsDAL.cs" />
+    <Compile Include="DAL\IPricesDAL.cs" />
     <Compile Include="DAL\PartsDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -212,7 +212,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Game.cshtml" />
+    <Content Include="Views\Home\Menu.cshtml" />
     <Content Include="Views\Home\Prices.cshtml" />
     <Content Include="Views\Home\Inventory.cshtml" />
     <Content Include="Views\Home\Buy.cshtml" />
@@ -220,6 +220,7 @@
     <Content Include="Views\Home\Casino.cshtml" />
     <Content Include="Views\Home\Airport.cshtml" />
     <Content Include="Views\Home\GameOver.cshtml" />
+    <Content Include="Views\Home\NewGame.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

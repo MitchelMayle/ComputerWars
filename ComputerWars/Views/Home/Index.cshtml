@@ -11,12 +11,12 @@
 @if (Session["player"] == null)
 {
     <div class="begin">
-        @Html.ActionLink("Begin Game", "Game", "Home")
+        @Html.ActionLink("Begin Game", "NewGame", "Home")
     </div>
 }
 else
 {
     <div class="begin">
-        @Html.ActionLink("Continue Game", "Game", "Home")
+        @Html.ActionLink("Continue Game", "Menu", "Home")
     </div>
 }

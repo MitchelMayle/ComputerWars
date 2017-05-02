@@ -10,11 +10,11 @@ namespace ComputerWars.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IPartsDAL partsDAL;
+        private readonly IPricesDAL pricesDAL;
 
-        public HomeController(IPartsDAL partsDAL)
+        public HomeController(IPricesDAL pricesDAL)
         {
-            this.partsDAL = partsDAL;
+            this.pricesDAL = pricesDAL;
         }
 
         public ActionResult Index()
@@ -22,21 +22,44 @@ namespace ComputerWars.Controllers
             return View("Index");
         }
 
-        public ActionResult Game()
+        [HttpGet]
+        public ActionResult NewGame()
+        {
+            if (Session["player"] != null)
+            {
+                return RedirectToAction("Menu");
+            }
+
+            Player player = new Player();
+            Session["player"] = player;
+
+            return View("NewGame", player);
+        }
+
+        [HttpPost]
+        public ActionResult NewGame(Player player)
+        {
+            player.Prices = pricesDAL.RandomizePrices();
+            Session["player"] = player;
+
+            return RedirectToAction("Menu");
+        }
+
+        public ActionResult Menu()
         {
             if (Session["player"] == null)
-            {
-                Player player = new Player();
-                player.Prices = partsDAL.RandomizePrices();
-
-                Session["player"] = player;
-
-                return View("Game", player);
+            {              
+                return RedirectToAction("Index");
             }
-            else
+
+            Player player = Session["player"] as Player;
+
+            if (player.CurrentDay > 30)
             {
-                return View("Game", Session["player"] as Player);
+                return RedirectToAction("GameOver");
             }
+
+            return View("Menu", player);
         }
 
         public ActionResult Prices()
@@ -89,6 +112,7 @@ namespace ComputerWars.Controllers
             return View("Casino", Session["player"] as Player);
         }
 
+        [HttpGet]
         public ActionResult Airport()
         {
             if (Session["player"] == null)
@@ -97,6 +121,22 @@ namespace ComputerWars.Controllers
             }
 
             return View("Airport", Session["player"] as Player);
+        }
+
+        public ActionResult NextDay()
+        {
+            if (Session["player"] == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            Player player = Session["player"] as Player;
+
+            player.CurrentDay++;
+            player.Prices = pricesDAL.RandomizePrices();
+            Session["player"] = player;
+
+            return RedirectToAction("Menu");
         }
 
         public ActionResult GameOver()

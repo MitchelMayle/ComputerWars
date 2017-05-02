@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ComputerWars.DAL
 {
-    public interface IPartsDAL
+    public interface IPricesDAL
     {
         Dictionary<string, int> RandomizePrices();
     }

@@ -1,0 +1,18 @@
+﻿@model ComputerWars.Models.Player
+
+@{
+    ViewBag.Title = "New Game";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="instructions">
+    <p>Please enter your name to continue:</p>
+
+    @using (Html.BeginForm("NewGame", "Home", FormMethod.Post))
+    {
+        @Html.TextBoxFor(m => m.Name)
+        @Html.ValidationMessageFor(m => m.Name)
+
+        <button> Begin Game</button>
+    }
+</div>
