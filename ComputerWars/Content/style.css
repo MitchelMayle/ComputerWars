@@ -39,7 +39,7 @@ h1 {
         text-decoration: none;
     }
 
-.instructions, .begin, .stats, .options, .endGame, .prices, .return, .inventory {
+.instructions, .begin, .stats, .options, .endGame, .prices, .return, .inventory, .gameOver, .newGame {
     display: block;
     margin-top: 2%;
     margin-left: auto;

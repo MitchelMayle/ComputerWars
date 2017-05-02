@@ -5,6 +5,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="return">
-    <p>@Html.ActionLink("Return To Main Menu", "Game", "Home")</p>
+<div class="gameOver">
+    <h2 style="text-decoration: underline">GAME OVER</h2>
+    <p>You ended with $@Model.Money</p>
+</div>
+
+<div class="newGame">
+    <p>@Html.ActionLink("New Game", "Index", "Home")</p>
 </div>

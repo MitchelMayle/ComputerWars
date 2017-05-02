@@ -98,5 +98,18 @@ namespace ComputerWars.Controllers
 
             return View("Airport", Session["player"] as Player);
         }
+
+        public ActionResult GameOver()
+        {
+            if (Session["player"] == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            Player player = Session["player"] as Player;
+            Session.Abandon();
+
+            return View("GameOver", player);
+        }
     }
 }
