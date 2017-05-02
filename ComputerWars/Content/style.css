@@ -11,6 +11,7 @@
 .wholePageDiv {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 header {
@@ -26,12 +27,14 @@ h1 {
     font-size: 500%;
 }
 
-.instructions {
+.instructions, .begin, .stats {
+    display: block;
     margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
     padding: .5%;
     max-width: 500px;
     font-weight: bold;
-    background-color: black;
     border: 3px dotted forestgreen;
     border-radius: 15px;
     text-align: center;

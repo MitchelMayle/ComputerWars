@@ -1,0 +1,11 @@
+﻿@model ComputerWars.Models.Player
+
+@{
+    ViewBag.Title = "Game";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="stats">
+    <p>Current Day: @Model.CurrentDay</p>
+    <p>Money Remaining: $@Model.Money</p>
+</div>
