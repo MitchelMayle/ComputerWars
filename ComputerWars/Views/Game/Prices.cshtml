@@ -1,0 +1,19 @@
+﻿@model ComputerWars.Models.Player
+
+@{
+    ViewBag.Title = "Part Prices";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="prices">
+    <h2>Today's Prices</h2>
+    <p><span class="item">Processors:</span> @Model.Prices["Processors"].ToString("C0")</p>
+    <p><span class="item">Graphics Cards:</span> @Model.Prices["Graphics Cards"].ToString("C0")</p>
+    <p><span class="item">Hard Drives:</span> @Model.Prices["Hard Drives"].ToString("C0")</p>
+    <p><span class="item">RAM Sticks:</span> @Model.Prices["RAM Sticks"].ToString("C0")</p>
+    <p><span class="item">Flash Drives:</span> @Model.Prices["Flash Drives"].ToString("C0")</p>
+</div>
+
+<div class="return">
+    <p>@Html.ActionLink("Return To Main Menu", "Menu", "Game")</p>
+</div>

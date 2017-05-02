@@ -17,13 +17,13 @@
 
     @if (Model.CurrentDay < 30)
     {
-        <p>@Html.ActionLink("Proceed to Day " + (Model.CurrentDay + 1), "NextDay", "Home") </p>
+        <p>@Html.ActionLink("Proceed to Day " + (Model.CurrentDay + 1), "NextDay", "Game") </p>
     }
     else
     {
-        <p>@Html.ActionLink("End Game", "NextDay", "Home") </p>
+        <p>@Html.ActionLink("End Game", "NextDay", "Game") </p>
     }
 
-    <p>@Html.ActionLink("Return To Main Menu", "Menu", "Home")</p>
+    <p>@Html.ActionLink("Return To Main Menu", "Menu", "Game")</p>
 
 </div>

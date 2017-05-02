@@ -8,11 +8,11 @@ using ComputerWars.DAL;
 
 namespace ComputerWars.Controllers
 {
-    public class HomeController : Controller
+    public class GameController : Controller
     {
         private readonly IPricesDAL pricesDAL;
 
-        public HomeController(IPricesDAL pricesDAL)
+        public GameController(IPricesDAL pricesDAL)
         {
             this.pricesDAL = pricesDAL;
         }

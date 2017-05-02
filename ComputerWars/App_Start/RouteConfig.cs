@@ -16,8 +16,8 @@ namespace ComputerWars
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                url: "{action}/{id}",
+                defaults: new { controller = "Game", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

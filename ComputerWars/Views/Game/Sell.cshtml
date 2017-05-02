@@ -27,7 +27,7 @@
     </div>
 
     <div class="buySellForm">
-        @using (Html.BeginForm("Sell", "Home", FormMethod.Post))
+        @using (Html.BeginForm("Sell", "Game", FormMethod.Post))
         {
             <p class="item">@Html.Label("Select a part to sell")</p>
             <p>@Html.DropDownListFor(m => m.PartName, BuySellViewModel.Items)</p>
@@ -50,5 +50,5 @@ else
 }
 
 <div class="return">
-    <p>@Html.ActionLink("Return To Main Menu", "Menu", "Home")</p>
+    <p>@Html.ActionLink("Return To Main Menu", "Menu", "Game")</p>
 </div>

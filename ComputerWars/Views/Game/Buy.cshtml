@@ -16,7 +16,7 @@
 </div>
 
 <div class="buySellForm">
-    @using (Html.BeginForm("Buy", "Home", FormMethod.Post))
+    @using (Html.BeginForm("Buy", "Game", FormMethod.Post))
     {
         <h2>Your Current Balance: $@Model.Player.Money</h2>
 
@@ -34,5 +34,5 @@
 </div>
 
 <div class="return">
-    <p>@Html.ActionLink("Return To Main Menu", "Menu", "Home")</p>
+    <p>@Html.ActionLink("Return To Main Menu", "Menu", "Game")</p>
 </div>

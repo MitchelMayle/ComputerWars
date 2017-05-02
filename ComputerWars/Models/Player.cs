@@ -14,7 +14,10 @@ namespace ComputerWars.Models
             CurrentDay = 1;
         }
 
-        [Required(ErrorMessage = "A name is required.")]
+        [Required(ErrorMessage = "Enter a name.")]
+        [MinLength(2, ErrorMessage = "Name must contain at least 2 letters.")]
+        [MaxLength(20, ErrorMessage = "Name can not be more than 20 characters.")]
+        [RegularExpression("^[a-zA-Z]*$", ErrorMessage = "Name can only contain letters.")]
         public string Name { get; set; }
 
         public int CurrentDay { get; set; }

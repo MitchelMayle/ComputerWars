@@ -154,7 +154,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\GameController.cs" />
     <Compile Include="DAL\IPricesDAL.cs" />
     <Compile Include="DAL\IScoreDAL.cs" />
     <Compile Include="DAL\PartsDAL.cs" />
@@ -163,6 +163,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\BuySellViewModel.cs" />
+    <Compile Include="Models\HighScore.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -214,16 +215,16 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Menu.cshtml" />
-    <Content Include="Views\Home\Prices.cshtml" />
-    <Content Include="Views\Home\Inventory.cshtml" />
-    <Content Include="Views\Home\Buy.cshtml" />
-    <Content Include="Views\Home\Sell.cshtml" />
-    <Content Include="Views\Home\Casino.cshtml" />
-    <Content Include="Views\Home\Airport.cshtml" />
-    <Content Include="Views\Home\GameOver.cshtml" />
-    <Content Include="Views\Home\NewGame.cshtml" />
+    <Content Include="Views\Game\Index.cshtml" />
+    <Content Include="Views\Game\Menu.cshtml" />
+    <Content Include="Views\Game\Prices.cshtml" />
+    <Content Include="Views\Game\Inventory.cshtml" />
+    <Content Include="Views\Game\Buy.cshtml" />
+    <Content Include="Views\Game\Sell.cshtml" />
+    <Content Include="Views\Game\Casino.cshtml" />
+    <Content Include="Views\Game\Airport.cshtml" />
+    <Content Include="Views\Game\GameOver.cshtml" />
+    <Content Include="Views\Game\NewGame.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -8,6 +8,7 @@ namespace ComputerWars.DAL
 {
     public interface IScoreDAL
     {
-        void RecordScore(Player player);
+        void SaveScore(Player player);
+        List<HighScore> TopScores();
     }
 }
