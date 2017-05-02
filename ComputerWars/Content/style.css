@@ -12,13 +12,14 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    flex-direction: column;
 }
 
 header {
     text-align: center;
     padding-top: 0;
     top: 0;
-    border-bottom: 5px double forestgreen;
+    border-bottom: 5px double darkgreen;
 }
 
 h1 {
@@ -27,7 +28,29 @@ h1 {
     font-size: 500%;
 }
 
-.instructions, .begin, .stats {
+.instructions, .begin {
+    display: block;
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: .5%;
+    max-width: 500px;
+    font-weight: bold;
+    border: 3px dotted darkgreen;
+    border-radius: 15px;
+    text-align: center;
+}
+
+    .begin a, .begin a:visited {
+        text-decoration: none;
+        color: darkgreen;
+    }
+
+        .begin a:hover {
+            color: blue;
+        }
+
+.stats {
     display: block;
     margin-top: 2%;
     margin-left: auto;
@@ -37,5 +60,5 @@ h1 {
     font-weight: bold;
     border: 3px dotted forestgreen;
     border-radius: 15px;
-    text-align: center;
+    text-align: left;
 }
