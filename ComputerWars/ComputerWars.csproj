@@ -225,6 +225,7 @@
     <Content Include="Views\Game\Airport.cshtml" />
     <Content Include="Views\Game\GameOver.cshtml" />
     <Content Include="Views\Game\NewGame.cshtml" />
+    <Content Include="Views\Game\HighScores.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -11,10 +11,12 @@ namespace ComputerWars.Controllers
     public class GameController : Controller
     {
         private readonly IPricesDAL pricesDAL;
+        private readonly IScoreDAL scoreSqlDAL;
 
-        public GameController(IPricesDAL pricesDAL)
+        public GameController(IPricesDAL pricesDAL, IScoreDAL scoreSqlDAL)
         {
             this.pricesDAL = pricesDAL;
+            this.scoreSqlDAL = scoreSqlDAL;
         }
 
         public ActionResult Index()
@@ -205,6 +207,13 @@ namespace ComputerWars.Controllers
             Session["player"] = player;
 
             return RedirectToAction("Menu");
+        }
+
+        public ActionResult HighScores()
+        {
+            List<HighScore> scores = scoreSqlDAL.TopScores();
+
+            return View("HighScores", scores);
         }
 
         public ActionResult GameOver()

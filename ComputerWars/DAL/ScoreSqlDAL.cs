@@ -41,7 +41,7 @@ namespace ComputerWars.DAL
 
         public List<HighScore> TopScores()
         {
-            List<HighScore> scores = null;
+            List<HighScore> scores = new List<HighScore>();
 
             try
             {

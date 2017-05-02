@@ -1,0 +1,18 @@
+﻿@using ComputerWars.Models
+@model List<HighScore>
+
+@{
+    ViewBag.Title = "High Scores";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model != null)
+{
+
+}
+else
+{
+    <div class="instructions">
+        <p>Error displaying high scores</p>
+    </div>
+}
