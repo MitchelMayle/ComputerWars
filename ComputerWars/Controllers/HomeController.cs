@@ -30,15 +30,17 @@ namespace ComputerWars.Controllers
                 return RedirectToAction("Menu");
             }
 
-            Player player = new Player();
-            Session["player"] = player;
-
-            return View("NewGame", player);
+            return View("NewGame");
         }
 
         [HttpPost]
         public ActionResult NewGame(Player player)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("NewGame", player);
+            }
+
             player.Prices = pricesDAL.RandomizePrices();
             Session["player"] = player;
 

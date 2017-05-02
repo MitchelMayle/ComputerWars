@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -13,7 +14,9 @@ namespace ComputerWars.Models
             CurrentDay = 1;
         }
 
+        [Required(ErrorMessage = "A name is required.")]
         public string Name { get; set; }
+
         public int CurrentDay { get; set; }
         public int Money { get; set; }
 

@@ -72,3 +72,7 @@ h1 a:hover {
 .stats, .prices, .inventory {
     text-align: left;
 }
+
+.field-validation-error {
+    color: red;
+}

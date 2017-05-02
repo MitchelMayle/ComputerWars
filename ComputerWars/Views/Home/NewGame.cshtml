@@ -11,8 +11,9 @@
     @using (Html.BeginForm("NewGame", "Home", FormMethod.Post))
     {
         @Html.TextBoxFor(m => m.Name)
-        @Html.ValidationMessageFor(m => m.Name)
-
+        <p>@Html.ValidationMessageFor(m => m.Name)</p>
+        <br />
+        <br />
         <button> Begin Game</button>
     }
 </div>

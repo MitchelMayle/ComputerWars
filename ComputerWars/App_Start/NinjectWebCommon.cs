@@ -64,6 +64,7 @@ namespace ComputerWars.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IPricesDAL>().To<PricesDAL>().WithConstructorArgument("connectionString", ConfigurationManager.ConnectionStrings["ComputerWars"].ConnectionString);
+            kernel.Bind<IScoreDAL>().To<ScoreSqlDAL>().WithConstructorArgument("connectionString", ConfigurationManager.ConnectionStrings["ComputerWars"].ConnectionString);
         }        
     }
 }
