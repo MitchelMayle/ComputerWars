@@ -18,6 +18,8 @@
 <div class="buySellForm">
     @using (Html.BeginForm("Buy", "Home", FormMethod.Post))
     {
+        <h2>Your Current Balance: $@Model.Player.Money</h2>
+
         <p class="item">@Html.Label("Select a part to purchase")</p>
         <p>@Html.DropDownListFor(m => m.PartName, BuySellViewModel.Items)</p>
         <p>@Html.ValidationMessageFor(m => m.PartName)</p>

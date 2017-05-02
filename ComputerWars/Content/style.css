@@ -45,6 +45,8 @@ h1 {
 
 h2 {
     text-align: center;
+    margin-top: 2%;
+    margin-bottom: 10%;
 }
 
 .instructions, .begin, .stats, .options, .endGame, .prices, .return, .inventory, .gameOver, .newGame, .buySellForm {
