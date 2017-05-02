@@ -233,5 +233,17 @@ namespace ComputerWars.Controllers
 
             return View("GameOver", player);
         }
+
+        public ActionResult CheckPlayer()
+        {
+            if (Session["player"] == null)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }
