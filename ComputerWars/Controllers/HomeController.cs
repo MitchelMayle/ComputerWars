@@ -50,7 +50,7 @@ namespace ComputerWars.Controllers
         public ActionResult Menu()
         {
             if (Session["player"] == null)
-            {              
+            {
                 return RedirectToAction("Index");
             }
 
@@ -84,6 +84,7 @@ namespace ComputerWars.Controllers
             return View("Inventory", Session["player"] as Player);
         }
 
+        [HttpGet]
         public ActionResult Buy()
         {
             if (Session["player"] == null)
@@ -95,6 +96,29 @@ namespace ComputerWars.Controllers
             viewModel.Player = Session["player"] as Player;
 
             return View("Buy", viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Buy(BuySellViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("Buy", model);
+            }
+
+            Player player = Session["player"] as Player;
+            model.Player = player;
+
+            if (player.Money < (player.Prices[model.PartName] * model.Quantity))
+            {
+                ModelState.AddModelError("notEnoughMoney", "You do not have enough money to complete this purchase");
+                return View("Buy", model);
+            }
+
+            player.Inventory[model.PartName] += model.Quantity;
+            Session["player"] = player;
+
+            return RedirectToAction("Menu");
         }
 
         public ActionResult Sell()

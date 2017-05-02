@@ -47,7 +47,7 @@ h2 {
     text-align: center;
 }
 
-.instructions, .begin, .stats, .options, .endGame, .prices, .return, .inventory, .gameOver, .newGame {
+.instructions, .begin, .stats, .options, .endGame, .prices, .return, .inventory, .gameOver, .newGame, .buySellForm {
     display: block;
     margin-top: 2%;
     margin-left: auto;
@@ -84,4 +84,8 @@ a, a:visited {
 .item {
     text-decoration: underline;
     font-weight: bold;
+}
+
+button {
+    border-radius: 10px;
 }

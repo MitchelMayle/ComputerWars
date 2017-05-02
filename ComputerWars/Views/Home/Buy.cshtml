@@ -1,4 +1,5 @@
-﻿@model ComputerWars.Models.BuySellViewModel
+﻿@using ComputerWars.Models
+@model ComputerWars.Models.BuySellViewModel
 
 @{
     ViewBag.Title = "Buy Parts";
@@ -12,6 +13,23 @@
     <p><span class="item">Hard Drives:</span> @Model.Player.Prices["Hard Drives"].ToString("C0")</p>
     <p><span class="item">RAM Sticks:</span> @Model.Player.Prices["RAM Sticks"].ToString("C0")</p>
     <p><span class="item">Flash Drives:</span> @Model.Player.Prices["Flash Drives"].ToString("C0")</p>
+</div>
+
+<div class="buySellForm">
+    @using (Html.BeginForm("Buy", "Home", FormMethod.Post))
+    {
+        <p class="item">@Html.Label("Select a part to purchase")</p>
+        <p>@Html.DropDownListFor(m => m.PartName, BuySellViewModel.Items)</p>
+        <p>@Html.ValidationMessageFor(m => m.PartName)</p>
+
+        <p class="item">@Html.Label("Enter a quantity to purchase")</p>
+        <p>@Html.TextBoxFor(m => m.Quantity, new { @Value = "" })</p>
+        <p>@Html.ValidationMessageFor(m => m.Quantity)</p>
+
+        <p>@Html.ValidationMessage("notEnoughMoney")</p>
+
+        <button>Purchase</button>
+    }
 </div>
 
 <div class="return">
