@@ -13,6 +13,7 @@ namespace ComputerWars.Models
         public string PartName { get; set; }
 
         [Required(ErrorMessage = "Please enter a qunatity.")]
+        [Range(1, int.MaxValue,ErrorMessage ="Invalid quantity entered.")]
         public int Quantity { get; set; }
 
         public static List<SelectListItem> Items { get; } = new List<SelectListItem>()

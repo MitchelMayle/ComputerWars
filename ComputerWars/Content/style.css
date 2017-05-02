@@ -57,7 +57,7 @@ h2 {
     padding: 1%;
     max-width: 500px;
     font-weight: bold;
-    border: 3px dotted darkgreen;
+    border: 4px double darkgreen;
     border-radius: 15px;
     text-align: center;
 }
