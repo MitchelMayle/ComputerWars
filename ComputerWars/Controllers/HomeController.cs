@@ -91,7 +91,10 @@ namespace ComputerWars.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View("Buy", Session["player"] as Player);
+            BuySellViewModel viewModel = new BuySellViewModel();
+            viewModel.Player = Session["player"] as Player;
+
+            return View("Buy", viewModel);
         }
 
         public ActionResult Sell()
@@ -101,7 +104,10 @@ namespace ComputerWars.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View("Sell", Session["player"] as Player);
+            BuySellViewModel viewModel = new BuySellViewModel();
+            viewModel.Player = Session["player"] as Player;
+
+            return View("Sell", viewModel);
         }
 
         public ActionResult Casino()

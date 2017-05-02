@@ -6,11 +6,12 @@
 }
 
 <div class="prices">
-    <p>Processors: $@Model.Prices["Processors"]</p>
-    <p>Graphics Cards: $@Model.Prices["Graphics Cards"]</p>
-    <p>Hard Drives: $@Model.Prices["Hard Drives"]</p>
-    <p>RAM Sticks: $@Model.Prices["RAM Sticks"]</p>
-    <p>Flash Drives: $@Model.Prices["Flash Drives"]</p>
+    <h2>Today's Prices</h2>
+    <p><span style="text-decoration: underline">Processors:</span> @Model.Prices["Processors"].ToString("C0")</p>
+    <p><span style="text-decoration: underline">Graphics Cards:</span> @Model.Prices["Graphics Cards"].ToString("C0")</p>
+    <p><span style="text-decoration: underline">Hard Drives:</span> @Model.Prices["Hard Drives"].ToString("C0")</p>
+    <p><span style="text-decoration: underline">RAM Sticks:</span> @Model.Prices["RAM Sticks"].ToString("C0")</p>
+    <p><span style="text-decoration: underline">Flash Drives:</span> @Model.Prices["Flash Drives"].ToString("C0")</p>
 </div>
 
 <div class="return">

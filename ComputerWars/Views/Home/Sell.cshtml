@@ -1,9 +1,27 @@
-﻿@model ComputerWars.Models.Player
+﻿@model ComputerWars.Models.BuySellViewModel
 
 @{
     ViewBag.Title = "Sell Parts";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<div class="inventory">
+    <h2>@Model.Player.Name's Inventory</h2>
+    <p><span class="item">Processors:</span> @Model.Player.Inventory["Processors"]</p>
+    <p><span class="item">Graphics Cards:</span> @Model.Player.Inventory["Graphics Cards"]</p>
+    <p><span class="item">Hard Drives:</span> @Model.Player.Inventory["Hard Drives"]</p>
+    <p><span class="item">RAM Sticks:</span> @Model.Player.Inventory["RAM Sticks"]</p>
+    <p><span class="item">Flash Drives:</span> @Model.Player.Inventory["Flash Drives"]</p>
+</div>
+
+<div class="prices">
+    <h2>Today's Prices</h2>
+    <p><span class="item">Processors:</span> @Model.Player.Prices["Processors"].ToString("C0")</p>
+    <p><span class="item">Graphics Cards:</span> @Model.Player.Prices["Graphics Cards"].ToString("C0")</p>
+    <p><span class="item">Hard Drives:</span> @Model.Player.Prices["Hard Drives"].ToString("C0")</p>
+    <p><span class="item">RAM Sticks:</span> @Model.Player.Prices["RAM Sticks"].ToString("C0")</p>
+    <p><span class="item">Flash Drives:</span> @Model.Player.Prices["Flash Drives"].ToString("C0")</p>
+</div>
 
 <div class="return">
     <p>@Html.ActionLink("Return To Main Menu", "Menu", "Home")</p>

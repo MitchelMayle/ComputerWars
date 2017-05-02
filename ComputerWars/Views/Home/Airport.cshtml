@@ -7,14 +7,23 @@
 
 <div class="instructions">
     <p>When you travel to a different city, one day will pass, and the price rate for each part will change for that day.</p>
-    <p>Do you want to proceed to the next day?</p>
 
     @if (Model.CurrentDay == 30)
     {
-        <p style="color: red;">This is your final day. If you proceed, the game will end.</p>
+        <p style="color: red;">This was your final day.</p>
     }
 
     <br />
-    <p>@Html.ActionLink("Proceed", "NextDay", "Home") </p>
+
+    @if (Model.CurrentDay < 30)
+    {
+        <p>@Html.ActionLink("Proceed to Day " + (Model.CurrentDay + 1), "NextDay", "Home") </p>
+    }
+    else
+    {
+        <p>@Html.ActionLink("End Game", "NextDay", "Home") </p>
+    }
+
     <p>@Html.ActionLink("Return To Main Menu", "Menu", "Home")</p>
+
 </div>
