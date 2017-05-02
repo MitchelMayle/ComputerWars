@@ -16,12 +16,13 @@
 </div>
 
 <div class="buySellForm">
-    @using (Html.BeginForm("Buy", "Game", FormMethod.Post))
+    @using (Html.BeginForm("Buy", "Game", FormMethod.Post, new { autocomplete = "off" }))
     {
         <h2>Your Current Balance: $@Model.Player.Money</h2>
 
         <p class="item">@Html.Label("Select a part to purchase")</p>
         <p>@Html.DropDownListFor(m => m.PartName, BuySellViewModel.Items)</p>
+        <p>@Html.ValidationMessageFor(m => m.PartName)</p>
 
         <p class="item">@Html.Label("Enter a quantity to purchase")</p>
         <p>@Html.TextBoxFor(m => m.Quantity, new { @Value = "" })</p>

@@ -10,6 +10,8 @@ namespace ComputerWars.Models
     public class BuySellViewModel
     {
         public Player Player { get; set; }
+
+        [Required(ErrorMessage = "Please choose an item.")]
         public string PartName { get; set; }
 
         [Required(ErrorMessage = "Please enter a qunatity.")]
@@ -18,6 +20,7 @@ namespace ComputerWars.Models
 
         public static List<SelectListItem> Items { get; } = new List<SelectListItem>()
         {
+            new SelectListItem() {Text="", Value="" },
             new SelectListItem() {Text="Processor", Value="Processors" },
             new SelectListItem() {Text="Graphics Card", Value="Graphics Cards" },
             new SelectListItem() {Text="Hard Drive", Value="Hard Drives" },

@@ -27,10 +27,11 @@
     </div>
 
     <div class="buySellForm">
-        @using (Html.BeginForm("Sell", "Game", FormMethod.Post))
+        @using (Html.BeginForm("Sell", "Game", FormMethod.Post, new { autocomplete = "off" }))
         {
             <p class="item">@Html.Label("Select a part to sell")</p>
             <p>@Html.DropDownListFor(m => m.PartName, BuySellViewModel.Items)</p>
+            <p>@Html.ValidationMessageFor(m => m.PartName)</p>
 
             <p class="item">@Html.Label("Enter a quantity to sell")</p>
             <p>@Html.TextBoxFor(m => m.Quantity, new { @Value = "" })</p>
