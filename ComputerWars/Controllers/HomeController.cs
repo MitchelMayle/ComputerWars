@@ -101,6 +101,11 @@ namespace ComputerWars.Controllers
         [HttpPost]
         public ActionResult Buy(BuySellViewModel model)
         {
+            if (Session["player"] == null)
+            {
+                return RedirectToAction("Index");
+            }
+
             Player player = Session["player"] as Player;
             model.Player = player;
 
@@ -116,11 +121,13 @@ namespace ComputerWars.Controllers
             }
 
             player.Inventory[model.PartName] += model.Quantity;
+            player.Money -= (player.Prices[model.PartName] * model.Quantity);
             Session["player"] = player;
 
             return RedirectToAction("Menu");
         }
 
+        [HttpGet]
         public ActionResult Sell()
         {
             if (Session["player"] == null)
@@ -132,6 +139,35 @@ namespace ComputerWars.Controllers
             viewModel.Player = Session["player"] as Player;
 
             return View("Sell", viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Sell(BuySellViewModel model)
+        {
+            if (Session["player"] == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            Player player = Session["player"] as Player;
+            model.Player = player;
+
+            if (!ModelState.IsValid)
+            {
+                return View("Buy", model);
+            }
+
+            if (player.Inventory[model.PartName] < model.Quantity)
+            {
+                ModelState.AddModelError("notEnoughParts", "You do not have that many.");
+                return View("Sell", model);
+            }
+
+            player.Inventory[model.PartName] -= model.Quantity;
+            player.Money += (player.Prices[model.PartName] * model.Quantity);
+            Session["player"] = player;
+
+            return RedirectToAction("Menu");
         }
 
         public ActionResult Casino()

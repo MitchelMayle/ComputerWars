@@ -30,5 +30,17 @@ namespace ComputerWars.Models
             {"RAM Sticks", 0 },
             {"Flash Drives", 0 }
         };
+
+        public bool HasParts()
+        {
+            int total = 0;
+
+           foreach (KeyValuePair<string, int> kvp in Inventory)
+            {
+                total += kvp.Value;
+            }
+
+            return total > 0;
+        }
     }
 }
