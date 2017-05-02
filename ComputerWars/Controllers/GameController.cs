@@ -226,6 +226,11 @@ namespace ComputerWars.Controllers
             Player player = Session["player"] as Player;
             Session.Abandon();
 
+            if (player.Money > 1000)
+            {
+                scoreSqlDAL.SaveScore(player);
+            }
+
             return View("GameOver", player);
         }
     }

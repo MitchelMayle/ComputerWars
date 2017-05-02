@@ -4,11 +4,40 @@
 @{
     ViewBag.Title = "High Scores";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    int count = 1;
 }
 
-@if (Model != null)
-{
+<h2>Top 20 Scores</h2>
 
+@if (Model.Count > 0)
+{
+    <div class="scores">
+        <table align="center">
+
+            <thead>
+                <tr>
+                    <td class="empty"></td>
+                    <td>Name</td>
+                    <td>Score</td>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                @foreach (HighScore entry in Model)
+                {
+                    <tr>
+                        <td>#@count</td>
+                        <td class="entry">@entry.Name</td>
+                        <td class="entry">@entry.Score.ToString("C0")</td>
+                    </tr>
+                    count++;
+                }
+
+            </tbody>
+
+        </table>
+    </div>
 }
 else
 {

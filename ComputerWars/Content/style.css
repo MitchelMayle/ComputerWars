@@ -46,10 +46,9 @@ h1 {
 h2 {
     text-align: center;
     margin-top: 2%;
-    margin-bottom: 10%;
 }
 
-.instructions, .begin, .stats, .options, .endGame, .prices, .return, .inventory, .gameOver, .newGame, .buySellForm {
+.instructions, .begin, .stats, .options, .endGame, .prices, .return, .inventory, .gameOver, .newGame, .buySellForm, .scores {
     display: block;
     margin-top: 2%;
     margin-left: auto;
@@ -105,4 +104,23 @@ button {
     font-weight: bold;
     font-size: large;
     padding: 10px;
+}
+
+table, thead, td, tr {
+    padding: 6%;
+    text-align: left;
+    border-collapse: collapse;
+   
+}
+
+table, td {
+    border: 1px solid darkgreen;
+}
+
+.empty {
+    min-width: 30px;
+}
+
+.entry {
+    padding: 6%;
 }
