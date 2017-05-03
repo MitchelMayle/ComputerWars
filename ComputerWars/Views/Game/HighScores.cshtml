@@ -9,39 +9,42 @@
 
 <h2>Top 20 Scores</h2>
 
-@if (Model.Count > 0)
-{
-    <div class="scores">
-        <table align="center">
+<div class="scores">
+    <table align="center">
 
-            <thead>
+        <thead>
+            <tr>
+                <td class="empty"></td>
+                <td><div class="table">Name</div></td>
+                <td><div class="table">Score</div></td>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @foreach (HighScore entry in Model)
+            {
                 <tr>
-                    <td class="empty"></td>
-                    <td>Name</td>
-                    <td>Score</td>
+                    <td>
+                        <div class="table">
+                            #@count
+                        </div>
+                    </td>
+                    <td class="entry">
+                        <div class="table">
+                            @entry.Name
+                        </div>
+                    </td>
+                    <td class="entry">
+                        <div class="table">
+                            @entry.Score.ToString("C0")
+                        </div>
+                    </td>
                 </tr>
-            </thead>
+                count++;
+            }
 
-            <tbody>
+        </tbody>
 
-                @foreach (HighScore entry in Model)
-                {
-                    <tr>
-                        <td>#@count</td>
-                        <td class="entry">@entry.Name</td>
-                        <td class="entry">@entry.Score.ToString("C0")</td>
-                    </tr>
-                    count++;
-                }
-
-            </tbody>
-
-        </table>
-    </div>
-}
-else
-{
-    <div class="instructions">
-        <p>Error displaying high scores</p>
-    </div>
-}
+    </table>
+</div>

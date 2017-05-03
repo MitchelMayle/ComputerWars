@@ -111,19 +111,15 @@ button {
     }
 
 table, thead, td, tr {
-    padding: 6%;
-    text-align: left;
+    border: 1px solid darkgreen;
     border-collapse: collapse;
 }
 
-table, td {
-    border: 1px solid darkgreen;
+.table {
+    text-align: left;
+    min-width: 50px;
 }
 
-.empty {
-    min-width: 30px;
-}
-
-.entry {
-    padding: 6%;
+td {
+    padding: 5px;
 }
