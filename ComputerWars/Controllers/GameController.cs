@@ -8,6 +8,7 @@ using ComputerWars.DAL;
 
 namespace ComputerWars.Controllers
 {
+    [HandleError]
     public class GameController : Controller
     {
         private readonly IPricesDAL pricesDAL;
