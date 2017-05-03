@@ -31,17 +31,13 @@ header {
 h1 {
     margin-top: 0;
     margin-bottom: 1%;
-    font-size: 500%;
+    font-size: 450%;
 }
 
     h1 a, h1 a:visited, h1 a:hover {
         color: darkgreen;
         text-decoration: none;
     }
-
-        h1 a:hover {
-            color: darkgreen;
-        }
 
 h2 {
     text-align: center;
@@ -61,19 +57,6 @@ h2 {
     text-align: center;
 }
 
-a, a:visited {
-    text-decoration: none;
-    color: darkgreen;
-}
-
-    a:hover {
-        color: blue;
-    }
-
-.endGame a:hover {
-    color: red;
-}
-
 .stats, .prices, .inventory {
     text-align: left;
 }
@@ -85,10 +68,6 @@ a, a:visited {
 .item {
     text-decoration: underline;
     font-weight: bold;
-}
-
-button {
-    border-radius: 10px;
 }
 
 #PartName, #Name, #Quantity {
@@ -106,23 +85,20 @@ button {
     background-color: darkgreen;
     border: none;
     border-radius: 15px;
-    box-shadow: 0 5px #003800;
     outline: none;
 }
 
     button:hover {
-        background-color: #004b00;
+        background-color: #003900;
     }
 
     button:active {
-        background-color: #004b00;
-        box-shadow: 0 2.5px #003800;
+        background-color: #003900;
         transform: translateY(5px);
     }
 
 #endGame {
     background-color: darkred;
-    box-shadow: 0 5px #460000;
 }
 
     #endGame:hover {
@@ -131,7 +107,6 @@ button {
 
     #endGame:active {
         background-color: #580000;
-        box-shadow: 0 2.5px #460000;
         transform: translateY(5px);
     }
 

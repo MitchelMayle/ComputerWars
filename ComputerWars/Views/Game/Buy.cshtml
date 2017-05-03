@@ -35,5 +35,8 @@
 </div>
 
 <div class="return">
-    <p>@Html.ActionLink("Return To Main Menu", "Menu", "Game")</p>
+    @using (Html.BeginForm("Menu", "Game", FormMethod.Get))
+    {
+        <button>Return To Menu</button>
+    }
 </div>

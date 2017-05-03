@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Airport";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    int nextDay = Model.CurrentDay + 1;
 }
 
 <div class="instructions">
@@ -17,13 +18,22 @@
 
     @if (Model.CurrentDay < 30)
     {
-        <p>@Html.ActionLink("Proceed to Day " + (Model.CurrentDay + 1), "NextDay", "Game") </p>
+        using (Html.BeginForm("NextDay", "Game", FormMethod.Get))
+        {
+            <button>Proceed to Day @nextDay</button>
+        }
     }
     else
     {
-        <p>@Html.ActionLink("End Game", "NextDay", "Game") </p>
+        <form action="/GameOver" method="get">
+            <button id="endGame">END GAME</button>
+        </form>
     }
 
-    <p>@Html.ActionLink("Return To Main Menu", "Menu", "Game")</p>
+    <br />
+    @using (Html.BeginForm("Menu", "Game", FormMethod.Get))
+    {
+        <button>Return To Menu</button>
+    }
 
 </div>
