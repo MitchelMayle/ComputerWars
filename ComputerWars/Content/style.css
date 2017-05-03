@@ -117,7 +117,7 @@ button {
     button:active {
         background-color: #004b00;
         box-shadow: 0 2.5px #003800;
-        transform: translateY(2.5px);
+        transform: translateY(5px);
     }
 
 #endGame {
@@ -132,7 +132,7 @@ button {
     #endGame:active {
         background-color: #580000;
         box-shadow: 0 2.5px #460000;
-        transform: translateY(2.5px);
+        transform: translateY(5px);
     }
 
 table, thead, td, tr {
