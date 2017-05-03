@@ -25,6 +25,7 @@ namespace ComputerWars.Controllers
         }
 
         [HttpGet]
+        [Route ("NewGame")]
         public ActionResult NewGame()
         {
             if (Session["player"] != null)
@@ -36,6 +37,7 @@ namespace ComputerWars.Controllers
         }
 
         [HttpPost]
+        [Route("NewGame")]
         public ActionResult NewGame(Player player)
         {
             if (!ModelState.IsValid)
@@ -49,6 +51,7 @@ namespace ComputerWars.Controllers
             return RedirectToAction("Menu");
         }
 
+        [Route ("Menu")]
         public ActionResult Menu()
         {
             if (Session["player"] == null)
@@ -66,6 +69,7 @@ namespace ComputerWars.Controllers
             return View("Menu", player);
         }
 
+        [Route("Prices")]
         public ActionResult Prices()
         {
             if (Session["player"] == null)
@@ -76,6 +80,7 @@ namespace ComputerWars.Controllers
             return View("Prices", Session["player"] as Player);
         }
 
+        [Route("Inventory")]
         public ActionResult Inventory()
         {
             if (Session["player"] == null)
@@ -87,6 +92,7 @@ namespace ComputerWars.Controllers
         }
 
         [HttpGet]
+        [Route("Buy")]
         public ActionResult Buy()
         {
             if (Session["player"] == null)
@@ -101,6 +107,7 @@ namespace ComputerWars.Controllers
         }
 
         [HttpPost]
+        [Route("Buy")]
         public ActionResult Buy(BuySellViewModel model)
         {
             if (Session["player"] == null)
@@ -130,6 +137,7 @@ namespace ComputerWars.Controllers
         }
 
         [HttpGet]
+        [Route("Sell")]
         public ActionResult Sell()
         {
             if (Session["player"] == null)
@@ -144,6 +152,7 @@ namespace ComputerWars.Controllers
         }
 
         [HttpPost]
+        [Route("Sell")]
         public ActionResult Sell(BuySellViewModel model)
         {
             if (Session["player"] == null)
@@ -172,6 +181,7 @@ namespace ComputerWars.Controllers
             return RedirectToAction("Menu");
         }
 
+        [Route("Casino")]
         public ActionResult Casino()
         {
             if (Session["player"] == null)
@@ -182,7 +192,7 @@ namespace ComputerWars.Controllers
             return View("Casino", Session["player"] as Player);
         }
 
-        [HttpGet]
+        [Route("Airport")]
         public ActionResult Airport()
         {
             if (Session["player"] == null)
@@ -193,6 +203,7 @@ namespace ComputerWars.Controllers
             return View("Airport", Session["player"] as Player);
         }
 
+        [Route("NextDay")]
         public ActionResult NextDay()
         {
             if (Session["player"] == null)
@@ -209,6 +220,7 @@ namespace ComputerWars.Controllers
             return RedirectToAction("Menu");
         }
 
+        [Route("HighScores")]
         public ActionResult HighScores()
         {
             List<HighScore> scores = scoreSqlDAL.TopScores();
@@ -216,6 +228,7 @@ namespace ComputerWars.Controllers
             return View("HighScores", scores);
         }
 
+        [Route("GameOver")]
         public ActionResult GameOver()
         {
             if (Session["player"] == null)
@@ -232,18 +245,6 @@ namespace ComputerWars.Controllers
             }
 
             return View("GameOver", player);
-        }
-
-        public ActionResult CheckPlayer()
-        {
-            if (Session["player"] == null)
-            {
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                return null;
-            }
         }
     }
 }
