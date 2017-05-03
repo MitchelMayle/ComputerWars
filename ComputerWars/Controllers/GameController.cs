@@ -165,7 +165,7 @@ namespace ComputerWars.Controllers
 
             if (!ModelState.IsValid)
             {
-                return View("Buy", model);
+                return View("Sell", model);
             }
 
             if (player.Inventory[model.PartName] < model.Quantity)
