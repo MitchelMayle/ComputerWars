@@ -99,30 +99,46 @@ button {
 }
 
 button {
-    background-color: darkgreen;
-    border: none;
     font-weight: bold;
     font-size: large;
     padding: 10px;
+    font-family: 'Courier New';
+    background-color: darkgreen;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px #003800;
+    outline: none;
 }
 
-button:hover {
-    background-color: #003800;
-}
+    button:hover {
+        background-color: #004b00;
+    }
+
+    button:active {
+        background-color: #004b00;
+        box-shadow: 0 2.5px #003800;
+        transform: translateY(2.5px);
+    }
 
 #endGame {
     background-color: darkred;
+    box-shadow: 0 5px #460000;
 }
 
-#endGame:hover {
-    background-color: #460000;
-}
+    #endGame:hover {
+        background-color: #580000;
+    }
+
+    #endGame:active {
+        background-color: #580000;
+        box-shadow: 0 2.5px #460000;
+        transform: translateY(2.5px);
+    }
 
 table, thead, td, tr {
     padding: 6%;
     text-align: left;
     border-collapse: collapse;
-   
 }
 
 table, td {
