@@ -12,18 +12,37 @@
 </div>
 
 <div class="options">
-    <p>@Html.ActionLink("View Inventory", "Inventory", "Game")</p>
-    <p>@Html.ActionLink("View Current Prices", "Prices", "Game")</p>
-    <p>@Html.ActionLink("Buy Parts", "Buy", "Game")</p>
-    <p>@Html.ActionLink("Sell Parts", "Sell", "Game")</p>
-    <p>@Html.ActionLink("Casino", "Casino", "Game")</p>
-    <p>@Html.ActionLink("Airport", "Airport", "Game")</p>
+    @using (Html.BeginForm("Buy", "Game", FormMethod.Get))
+    {
+        <button>Buy Parts</button>
+    }
+    <br />
+    @using (Html.BeginForm("Sell", "Game", FormMethod.Get))
+    {
+        <button>Sell Parts</button>
+    }
+    <br />
+    @using (Html.BeginForm("Casino", "Game", FormMethod.Get))
+    {
+        <button>Casino</button>
+    }
+    <br />
+    @using (Html.BeginForm("Airport", "Game", FormMethod.Get))
+    {
+        <button>Airport</button>
+    }
 </div>
 
 <div class="endGame">
-    <p>@Html.ActionLink("END GAME", "GameOver", "Game")</p>
+    @using (Html.BeginForm("GameOver", "Game", FormMethod.Get))
+    {
+        <button>END GAME</button>
+    }
 </div>
 
 <div class="begin">
-    @Html.ActionLink("View High Scores", "HighScores", "Game")
+    @using (Html.BeginForm("HighScores", "Game", FormMethod.Get))
+    {
+        <button>View High Scores</button>
+    }
 </div>

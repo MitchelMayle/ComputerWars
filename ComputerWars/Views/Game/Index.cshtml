@@ -11,17 +11,26 @@
 @if (Session["player"] == null)
 {
     <div class="begin">
-        @Html.ActionLink("Start Game", "NewGame", "Game")
+        @using (Html.BeginForm("NewGame", "Game", FormMethod.Get))
+        {
+            <button>Start Game</button>
+        }
     </div>
 }
 else
 {
     <div class="begin">
         <p>You currently have a game in progress.</p>
-        @Html.ActionLink("Continue Game", "Menu", "Game")
+        @using (Html.BeginForm("Menu", "Game", FormMethod.Get))
+        {
+            <button>Continue Game</button>
+        }
     </div>
 }
 
 <div class="begin">
-    @Html.ActionLink("View High Scores", "HighScores", "Game")
+    @using (Html.BeginForm("HighScores", "Game", FormMethod.Get))
+    {
+        <button>View High Scores</button>
+    }
 </div>
