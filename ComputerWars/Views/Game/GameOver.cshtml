@@ -13,5 +13,8 @@
 
 
 <div class="newGame">
-    <p>@Html.ActionLink("New Game", "Index", "Game")</p>
+    @using (Html.BeginForm("Index", "Game", FormMethod.Get))
+    {
+        <button>New Game</button>
+    }
 </div>

@@ -106,6 +106,18 @@ button {
     padding: 10px;
 }
 
+button:hover {
+    background-color: #003800;
+}
+
+#endGame {
+    background-color: darkred;
+}
+
+#endGame:hover {
+    background-color: #460000;
+}
+
 table, thead, td, tr {
     padding: 6%;
     text-align: left;

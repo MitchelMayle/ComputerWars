@@ -34,10 +34,9 @@
 </div>
 
 <div class="endGame">
-    @using (Html.BeginForm("GameOver", "Game", FormMethod.Get))
-    {
-        <button>END GAME</button>
-    }
+    <form action="/GameOver" method="get">
+        <button id="endGame">END GAME</button>
+    </form>
 </div>
 
 <div class="begin">
