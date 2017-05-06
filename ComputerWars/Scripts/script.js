@@ -7,9 +7,6 @@
         $(this).unbind('submit').submit();
     });
 
-    $("#Name").blur(function (event) {
-        var name = $("#Name").val().trim();
-        console.log(name);
-    });
+
 
 });

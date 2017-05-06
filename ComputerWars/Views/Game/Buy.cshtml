@@ -25,7 +25,7 @@
         <p>@Html.ValidationMessageFor(m => m.PartName)</p>
 
         <p class="item">@Html.Label("Enter a quantity to purchase")</p>
-        <p>@Html.TextBoxFor(m => m.Quantity, new { @Value = "" })</p>
+        <p>@Html.EditorFor(m => m.Quantity, new { htmlAttributes = new { @type = "number", @min = "0", @step = "1", @value = "0" } })</p>
         <p>@Html.ValidationMessageFor(m => m.Quantity)</p>
 
         <p>@Html.ValidationMessage("notEnoughMoney")</p>
