@@ -229,6 +229,7 @@
     <Content Include="Views\Game\HighScores.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Error\Error404.cshtml" />
+    <Content Include="Views\Error\Error.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,5 +1,15 @@
 ﻿$(document).ready(function () {
-    document.getElementById("Name").reset();
-    document.getElementById("PartName").reset();
-    document.getElementById("Quantity").reset();
-}
+
+    $("#nameForm").submit(function (event) {
+        event.preventDefault();
+        var name = $("#Name").val().trim();
+        $("#Name").val(name);
+        $(this).unbind('submit').submit();
+    });
+
+    $("#Name").blur(function (event) {
+        var name = $("#Name").val().trim();
+        console.log(name);
+    });
+
+});
